@@ -1,11 +1,6 @@
 extends KinematicBody2D
 class_name Rocket
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 # Rotation speed in degrees per second
 export var rotation_speed : float = 60
 
@@ -51,7 +46,7 @@ func _process(delta):
 	# Fire!
 	if Input.is_action_just_pressed("Fire"):
 		var bullet = Bullet.instance()
-		bullet.velocity = Vector2(0,-bullet_speed).rotated(rotation)
+		bullet.forward_vector = Vector2(0,-1).rotated(rotation)
 		bullet.position = $GunPoint.get_global_transform().get_origin()
 		get_parent().add_child(bullet)
 		_shoot_sound.play()
