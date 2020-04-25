@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Font.tres" type="DynamicFont" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/SpaceMono-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://assets/ufo.png" type="Texture" id=7]
 [ext_resource path="res://assets/chicken.png" type="Texture" id=8]
+[ext_resource path="res://assets/arrowkeys.png" type="Texture" id=9]
+[ext_resource path="res://assets/space.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -15,12 +17,13 @@
 default_font = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 64
+size = 72
 outline_color = Color( 0.176471, 0.176471, 0.176471, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
+extra_spacing_bottom = -14
 font_data = ExtResource( 6 )
 
 [node name="MainMenu" type="Control"]
@@ -44,14 +47,15 @@ __meta__ = {
 }
 
 [node name="ufo" type="Sprite" parent="."]
-position = Vector2( 880.966, 217.842 )
+position = Vector2( 903.127, 195.681 )
+rotation = 0.261799
 scale = Vector2( 0.351389, 0.351389 )
 texture = ExtResource( 7 )
 
 [node name="chicken" type="Sprite" parent="."]
-position = Vector2( 205.117, 196.171 )
+position = Vector2( 368.829, 179.447 )
 rotation = -0.261799
-scale = Vector2( 1.0653, 1.0653 )
+scale = Vector2( 1.05928, 1.05928 )
 texture = ExtResource( 8 )
 
 [node name="StartButton" type="Button" parent="."]
@@ -86,9 +90,9 @@ __meta__ = {
 }
 
 [node name="rocket" type="Sprite" parent="."]
-position = Vector2( 183.189, 340.665 )
-rotation = 1.33692
-scale = Vector2( 0.368699, 0.368699 )
+position = Vector2( 195.498, 286.308 )
+rotation = 1.41892
+scale = Vector2( 0.396397, 0.396397 )
 texture = ExtResource( 3 )
 
 [node name="bullet-green" type="Sprite" parent="rocket"]
@@ -106,10 +110,10 @@ texture = ExtResource( 5 )
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -350.5
-margin_top = -48.4353
-margin_right = 350.5
-margin_bottom = 156.565
+margin_left = -386.5
+margin_top = -43.158
+margin_right = 386.5
+margin_bottom = 161.842
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.176471, 0.176471, 0.176471, 1 )
 custom_colors/font_color_shadow = Color( 0.537255, 0.85098, 0.815686, 1 )
@@ -126,14 +130,64 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -223.5
-margin_top = -181.0
+margin_top = -135.105
 margin_right = 223.5
-margin_bottom = -53.0
+margin_bottom = -42.1053
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press A/2 to shoot
-Right trigger to go forwards
-Steer with left control stick"
+text = "Shoot"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="thrusters" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -16.3295
+margin_right = 55.0
+margin_bottom = 34.6705
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Thrust"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clockwise" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 102.233
+margin_top = 88.934
+margin_right = 237.233
+margin_bottom = 139.934
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Clockwise"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cclockwise" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -237.934
+margin_top = 80.745
+margin_right = -102.934
+margin_bottom = 155.745
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Counter-
+clockwise"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,5 +207,13 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="arrowkeys" type="Sprite" parent="."]
+position = Vector2( 510.21, 381.409 )
+texture = ExtResource( 9 )
+
+[node name="space" type="Sprite" parent="."]
+position = Vector2( 506.762, 526.243 )
+texture = ExtResource( 10 )
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]

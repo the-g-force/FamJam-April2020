@@ -48,7 +48,7 @@ __meta__ = {
 }
 
 [node name="rocket" type="Sprite" parent="."]
-position = Vector2( 158.712, 332.476 )
+position = Vector2( 192, 320 )
 scale = Vector2( 0.654977, 0.654977 )
 texture = ExtResource( 3 )
 
