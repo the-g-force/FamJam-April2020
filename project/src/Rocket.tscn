@@ -37,7 +37,7 @@ texture = ExtResource( 3 )
 position = Vector2( 0, 377.58 )
 frames = SubResource( 2 )
 animation = "Flames"
-frame = 1
+frame = 3
 playing = true
 
 [node name="ThrustSound" type="AudioStreamPlayer" parent="."]
@@ -52,3 +52,12 @@ stream = ExtResource( 4 )
 
 [node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+
+[node name="ShieldDown" type="AudioStreamPlayer" parent="."]
+
+[node name="ShieldUp" type="AudioStreamPlayer" parent="."]
+
+[node name="ShieldTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+[connection signal="timeout" from="ShieldTimer" to="." method="_on_ShieldTimer_timeout"]

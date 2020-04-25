@@ -20,9 +20,14 @@ onready var _damage_sound = $DamageSound
 
 var _speed : float = 0
 var _dead : bool = false
+var _shielding : bool = true
 
 const _explosion = preload("res://src/Explosion.tscn")
 const _end = preload("res://src/End.tscn")
+
+func _draw():
+	if _shielding:
+		draw_circle(_gunpoint.position, 20, Color(0, 1, 0, 0.5))
 
 func _process(delta):
 	if not _dead:
@@ -65,8 +70,13 @@ func _process(delta):
 			
 
 func damage():
-	PlayerStats.health -= 1
-	_damage_sound.play()
+	if not _shielding:
+		PlayerStats.health -= 1
+		_damage_sound.play()
+	else:
+		_shielding = false
+		update()
+		$ShieldTimer.start(4)
 	if PlayerStats.health <= 0:
 		if not _dead:
 			var _explode = _explosion.instance()
@@ -77,3 +87,8 @@ func damage():
 			_dead = true
 			yield(get_tree().create_timer(2), "timeout")
 			var _error = get_tree().change_scene_to(_end)
+
+
+func _on_ShieldTimer_timeout():
+	_shielding = true
+	update()
