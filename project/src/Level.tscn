@@ -23,27 +23,35 @@ current = true
 
 [node name="LevelBounds" type="Node2D" parent="."]
 
-[node name="Top" type="StaticBody2D" parent="LevelBounds"]
+[node name="Top" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 2500, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Top"]
 shape = SubResource( 1 )
 
-[node name="Right" type="StaticBody2D" parent="LevelBounds"]
+[node name="Right" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 5000, 2500 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Right"]
 shape = SubResource( 1 )
 
-[node name="Left" type="StaticBody2D" parent="LevelBounds"]
+[node name="Left" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 0, 2500 )
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Left"]
 shape = SubResource( 1 )
 
-[node name="Bottom" type="StaticBody2D" parent="LevelBounds"]
+[node name="Bottom" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 2500, 5000 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Bottom"]
