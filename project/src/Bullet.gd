@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 export var forward_vector : Vector2 = Vector2(1,0) setget _set_forward_vector
-export var speed : float = 200
+export var speed : float = 400
 
 func _process(delta: float):
 	var velocity = forward_vector * speed * delta

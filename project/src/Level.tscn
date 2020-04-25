@@ -17,7 +17,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 5000, 5000 )
 
 [node name="Rocket" parent="." instance=ExtResource( 1 )]
-position = Vector2( 506.504, 293.862 )
+position = Vector2( 2506.63, 2244.61 )
 
 [node name="HUD" parent="Rocket" instance=ExtResource( 5 )]
 
