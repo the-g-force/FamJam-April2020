@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Rocket.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://src/Paths.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3147.6, 10 )
@@ -20,28 +21,48 @@ position = Vector2( 506.504, 293.862 )
 [node name="Camera2D" type="Camera2D" parent="Rocket"]
 current = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 2500, 0 )
+[node name="LevelBounds" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Top" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
+position = Vector2( 2500, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Top"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="Right" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 5000, 2500 )
 rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Right"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="Left" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 0, 2500 )
 rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Left"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="Bottom" type="StaticBody2D" parent="LevelBounds" groups=[
+"LevelBounds",
+]]
 position = Vector2( 2500, 5000 )
+collision_layer = 3
+collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Bottom"]
 shape = SubResource( 1 )
+
+[node name="Paths" parent="." instance=ExtResource( 3 )]
