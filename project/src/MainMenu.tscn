@@ -9,17 +9,17 @@
 [ext_resource path="res://assets/ufo.png" type="Texture" id=7]
 [ext_resource path="res://assets/chicken.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=3]
-
-[sub_resource type="Theme" id=4]
-default_font = SubResource( 3 )
-
 [sub_resource type="DynamicFont" id=1]
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
 size = 64
 outline_color = Color( 0.176471, 0.176471, 0.176471, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 6 )
 
@@ -63,7 +63,7 @@ margin_left = 326.93
 margin_top = 159.92
 margin_right = 448.93
 margin_bottom = 218.92
-theme = SubResource( 4 )
+theme = SubResource( 2 )
 custom_fonts/font = ExtResource( 2 )
 text = "Start"
 __meta__ = {
@@ -110,7 +110,7 @@ margin_left = -350.5
 margin_top = -48.4353
 margin_right = 350.5
 margin_bottom = 156.565
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.176471, 0.176471, 0.176471, 1 )
 custom_colors/font_color_shadow = Color( 0.537255, 0.85098, 0.815686, 1 )
 text = "Rocket and UFO Game"
@@ -129,7 +129,7 @@ margin_left = -223.5
 margin_top = -181.0
 margin_right = 223.5
 margin_bottom = -53.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Press A/2 to shoot
 Right trigger to go forwards
@@ -146,7 +146,7 @@ margin_left = -289.979
 margin_top = 98.5092
 margin_right = 310.021
 margin_bottom = 139.509
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0.286275, 0.309804, 1 )
 text = "Shoot the UFOs and collect the chickens!"
 align = 1
