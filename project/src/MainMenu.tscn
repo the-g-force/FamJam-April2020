@@ -131,9 +131,9 @@ margin_right = 223.5
 margin_bottom = -53.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press A/2 to shoot
-Right trigger to go forwards
-Steer with left control stick"
+text = "Steer: A/D or Left/Right
+Thrust: W or Up
+Shoot: Space or Z"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
