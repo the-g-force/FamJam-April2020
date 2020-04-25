@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Paths.gd" type="Script" id=1]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 160.307, 263.137, 0, 0, 0, 0, 431.933, 898.262, 0, 0, 0, 0, 1174.91, 778.427, 0, 0, 0, 0, 871.328, 215.203 )
+"points": PoolVector2Array( 0, 0, 0, 0, 553.903, -2.71939, 12.9963, -428.878, -12.9963, 428.878, 1378.54, 905.784, 389.889, 38.9889, -389.889, -38.9889, 808.833, 1298.67, -129.963, 506.856, 129.963, -506.856, 295.458, 747.269, -77.9778, -662.812, 77.9778, 662.812, 2127.13, 1311.35, 0, 0, 0, 0, 1491.47, 1921.69, -701.303, -1009.88, 701.303, 1009.88, 1276.57, 2992.19, -617.147, 1122.09, 617.147, -1122.09, 6026.23, 4468.58, 0, 0, 0, 0, 4623.62, 2308.56 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -50.6445, 4845.06, -666.046, 2058.69, 666.046, -2058.69, 3842.87, 3110.97, -1691.18, 203.284, 1691.18, -203.284, 2566.84, 460.76, -749.635, -1592.97, 749.635, 1592.97, 7409.2, 1998.54, 0, 0, 0, 0, 3557.67, 6557.44 )
+}
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 2811.13, -2248.91, -2811.13, 2248.91, 8290.42, 6331.84, 468.522, 1546.12, -468.522, -1546.12, 2480.75, 5535.35, 562.226, 1265.01, -562.226, -1265.01, 5385.58, 2115.14, 0, 0, 0, 0, 1777.96, -86.9111 )
 }
 
 [node name="Root" type="Node2D"]
@@ -14,6 +24,12 @@ script = ExtResource( 1 )
 
 [node name="Path2D" type="Path2D" parent="Paths"]
 curve = SubResource( 1 )
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+curve = SubResource( 2 )
+
+[node name="Path2D3" type="Path2D" parent="Paths"]
+curve = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
