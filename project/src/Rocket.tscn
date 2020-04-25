@@ -36,7 +36,7 @@ texture = ExtResource( 3 )
 position = Vector2( 0, 377.58 )
 frames = SubResource( 2 )
 animation = "Flames"
-frame = 2
+frame = 3
 playing = true
 
 [node name="ThrustSound" type="AudioStreamPlayer" parent="."]
