@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+onready var engine = $AudioStreamPlayer
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -29,7 +29,11 @@ func _process(delta):
 			(-Input.get_action_strength("TurnLeft") + Input.get_action_strength("TurnRight")) \
 			* rotation_speed \
 			* delta
-			
+	if Input.get_action_strength("Thrust") != 0:
+		if engine.playing == false:
+			engine.play()
+	else:
+		engine.stop()
 	# Determine the speed based on acceleration
 	var target_speed = lerp(min_speed, max_speed, Input.get_action_strength("Thrust"))
 	_speed = lerp(_speed, target_speed, acceleration)
