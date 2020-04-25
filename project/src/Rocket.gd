@@ -8,12 +8,19 @@ extends KinematicBody2D
 # Rotation speed in degrees per second
 export var rotation_speed : float = 60
 
-# Max thrust strength in pixels per second
-export var thrust_strength : float = 120
+export var acceleration : float = 0.1
+
+export var min_speed : float = 20
+export var max_speed : float = 150
+
+var _speed : float = 0
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
 
 
 func _process(delta):
@@ -22,9 +29,11 @@ func _process(delta):
 			(-Input.get_action_strength("TurnLeft") + Input.get_action_strength("TurnRight")) \
 			* rotation_speed \
 			* delta
+			
+	# Determine the speed based on acceleration
+	var target_speed = lerp(min_speed, max_speed, Input.get_action_strength("Thrust"))
+	_speed = lerp(_speed, target_speed, acceleration)
 	
-	# Move forward according to current thrust
-	var velocity = Vector2(0, -thrust_strength * Input.get_action_strength("Thrust"))\
-			.rotated(deg2rad(rotation_degrees)) * delta
-	position += velocity
-	
+	# Move the rocket
+	var velocity : Vector2 = Vector2(0, -_speed).rotated(deg2rad(rotation_degrees)) * delta
+	move_and_collide(velocity)
