@@ -5,8 +5,14 @@ export var game_music : AudioStream = preload("res://assets/music/mainloop.ogg")
 
 onready var _music = $Music
 
+var _main_menu_playing : bool = false
+
 func play_menu_music() -> void:
-	_play(menu_music)
+	# Special handling for main menu music to handle transition to/from
+	# the credits screen
+	if not _main_menu_playing:
+		_play(menu_music)
+		_main_menu_playing = true
 
 	
 func play_game_music() -> void:
