@@ -10,8 +10,10 @@ func _ready():
 	
 
 func _on_StartButton_pressed():
+	Jukebox.pressed.play()
 	var _error = get_tree().change_scene_to(_Level)
 
 
 func _on_CreditsButton_pressed():
+	Jukebox.pressed.play()
 	var _error = get_tree().change_scene_to(_Credits) # Replace with function body.

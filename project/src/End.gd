@@ -10,12 +10,14 @@ func _ready():
 
 
 func _on_Restart_pressed():
+	Jukebox.pressed.play()
 	PlayerStats.health = 10
 	PlayerStats.score = 0
 	var _error = get_tree().change_scene_to(_level)
 
 
 func _on_Main_pressed():
+	Jukebox.pressed.play()
 	PlayerStats.health = 10
 	PlayerStats.score = 0
 	var _error = get_tree().change_scene_to(_main)

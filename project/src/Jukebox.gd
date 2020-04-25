@@ -3,6 +3,7 @@ extends Node
 export var menu_music : AudioStream = preload("res://assets/music/Game_Jam.ogg")
 export var game_music : AudioStream = preload("res://assets/music/mainloop.ogg")
 
+onready var pressed : AudioStreamPlayer = $ButtonPressed
 onready var _music = $Music
 
 var _main_menu_playing : bool = false
