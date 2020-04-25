@@ -24,8 +24,8 @@ func _on_body_entered(body):
 
 func _spawn(scene : PackedScene) -> void:
 	var node = scene.instance()
-	node.position = position
-	get_parent().call_deferred('add_child', node)
+	node.position = get_global_transform().origin
+	get_tree().get_root().call_deferred('add_child', node)
 
 
 func _process(_delta:float):
