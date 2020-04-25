@@ -6,7 +6,7 @@ var _main : PackedScene = load("res://src/MainMenu.tscn")
 var _level : PackedScene = load("res://src/Level.tscn")
 
 func _ready():
-	_scoredisplay.text = "Your score was:" + str(PlayerStats.score)
+	_scoredisplay.text = "You saved " + str(PlayerStats.score) + " chickens!"
 
 
 func _on_Restart_pressed():

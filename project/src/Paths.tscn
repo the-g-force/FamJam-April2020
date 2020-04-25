@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Paths.gd" type="Script" id=1]
 
@@ -17,6 +17,16 @@ _data = {
 "points": PoolVector2Array( 2811.13, -2248.91, -2811.13, 2248.91, 5013.54, 2172.16, 468.522, 1546.12, -468.522, -1546.12, 2301.05, 2468.07, 562.226, 1265.01, -562.226, -1265.01, 3829.91, 1136.48, 0, 0, 0, 0, 1782.31, 20.5396 )
 }
 
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1442.25, -3.06996, -1302.73, 93.0518, 1302.73, -93.0518, 3209.75, 2414.24, -1563.27, 55.8311, 1563.27, -55.8311, 4145.48, 1023.64, 1004.96, -614.142, -1004.96, 614.142, 4253.35, 4570.68, 688.584, -93.0518, -688.584, 93.0518, 1683.74, 3998.02, 0, 0, 0, 0, 1971.99, 5128.28 )
+}
+
+[sub_resource type="Curve2D" id=6]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2979.85, 2218.26, 781.424, 173.65, -781.424, -173.65, 903.168, 3521.88, -238.768, 738.011, 238.768, -738.011, 296.838, 1566.46, -1085.31, 86.8249, 1085.31, -86.8249, 2055.2, 323.482, -1714.79, -694.599, 1714.79, 694.599, 4089.08, 575.78, 0, 0, 0, 0, 2634.77, 5047.26 )
+}
+
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -31,7 +41,13 @@ curve = SubResource( 2 )
 [node name="Path2D3" type="Path2D" parent="Paths"]
 curve = SubResource( 3 )
 
+[node name="Path2D5" type="Path2D" parent="Paths"]
+curve = SubResource( 5 )
+
+[node name="Path2D4" type="Path2D" parent="Paths"]
+curve = SubResource( 6 )
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
