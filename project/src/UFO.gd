@@ -31,7 +31,7 @@ func _process(_delta:float):
 		var bullet = _EnemyBullet.instance()
 		bullet.position = get_global_transform().origin
 		var trajectory : Vector2 = _target.get_global_transform().get_origin() - get_global_transform().origin
-		bullet.velocity = trajectory.normalized() * bullet_speed
+		bullet.forward_vector = trajectory.normalized()
 		get_parent().add_child(bullet)
 		_can_shoot = false
 		$ShootingCooldown.start(shoot_delay)
