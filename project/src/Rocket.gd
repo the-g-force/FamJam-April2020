@@ -12,16 +12,13 @@ export var acceleration : float = 0.1
 
 export var min_speed : float = 20
 export var max_speed : float = 150
+export var Bullet = preload("res://src/Bullet.tscn")
+export var bullet_speed : float = 400
 
 var _speed : float = 0
 
-onready var flames : Node2D = $Hull/Flames
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
+onready var _flames : Node2D = $Hull/Flames
+onready var _gunpoint : Node2D = $GunPoint
 
 func _process(delta):
 	# Turn according to the rotation inputs
@@ -43,4 +40,11 @@ func _process(delta):
 	var _collision = move_and_collide(velocity) # Ignore the collision results for now
 
 	# Update the flame visibility
-	flames.visible = Input.get_action_strength("Thrust") > 0
+	_flames.visible = Input.get_action_strength("Thrust") > 0
+
+	# Fire!
+	if Input.is_action_just_pressed("Fire"):
+		var bullet = Bullet.instance()
+		bullet.velocity = Vector2(0,-bullet_speed).rotated(rotation)
+		bullet.position = $GunPoint.get_global_transform().get_origin()
+		get_parent().add_child(bullet)
