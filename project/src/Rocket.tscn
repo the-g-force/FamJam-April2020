@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Rocket.gd" type="Script" id=1]
 [ext_resource path="res://assets/sfx/good_engine.wav" type="AudioStream" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://assets/fires/002.png" type="Texture" id=7]
 [ext_resource path="res://assets/fires/003.png" type="Texture" id=8]
 [ext_resource path="res://assets/sfx/hit.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sfx/force_field_on.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sfx/shield_down.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.989, 75.7177 )
@@ -54,8 +56,10 @@ stream = ExtResource( 4 )
 stream = ExtResource( 9 )
 
 [node name="ShieldDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
 
 [node name="ShieldUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [node name="ShieldTimer" type="Timer" parent="."]
 wait_time = 4.0

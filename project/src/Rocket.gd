@@ -12,6 +12,8 @@ export var Bullet = preload("res://src/Bullet.tscn")
 export var bullet_speed : float = 400
 
 onready var _flames : Node2D = $Hull/Flames
+onready var _shield_up : AudioStreamPlayer = $ShieldUp
+onready var _shield_down : AudioStreamPlayer = $ShieldDown
 onready var _collision : CollisionShape2D = $CollisionShape2D
 onready var _gunpoint : Node2D = $GunPoint
 onready var _shoot_sound : AudioStreamPlayer2D = $ShootSound
@@ -74,6 +76,7 @@ func damage():
 		PlayerStats.health -= 1
 		_damage_sound.play()
 	else:
+		_shield_down.play()
 		_shielding = false
 		update()
 		$ShieldTimer.start(4)
@@ -90,5 +93,6 @@ func damage():
 
 
 func _on_ShieldTimer_timeout():
+	_shield_up.play()
 	_shielding = true
 	update()
