@@ -35,6 +35,7 @@ func _process(_delta:float):
 		var trajectory : Vector2 = _target.get_global_transform().get_origin() - get_global_transform().origin
 		bullet.forward_vector = trajectory.normalized()
 		get_parent().add_child(bullet)
+		$ShootSound.play()
 		_can_shoot = false
 		$ShootingCooldown.start(shoot_delay)
 
