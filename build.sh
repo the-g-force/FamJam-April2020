@@ -26,7 +26,7 @@ godot --path project --export "HTML5" ../$DIR/$TARGET.html
 #
 
 # Copy pako to the staging directory 
-cp tools/pako_inflate.min.js $DIR
+cp pako_inflate.min.js $DIR
 
 # Go to the staging directory
 cd $DIR
