@@ -16,6 +16,7 @@ onready var _shield_up : AudioStreamPlayer = $ShieldUp
 onready var _shield_down : AudioStreamPlayer = $ShieldDown
 onready var _collision : CollisionShape2D = $CollisionShape2D
 onready var _gunpoint : Node2D = $GunPoint
+onready var _shield : Sprite = $Shield
 onready var _shoot_sound : AudioStreamPlayer2D = $ShootSound
 onready var _thrust_sound = $ThrustSound
 onready var _damage_sound = $DamageSound
@@ -26,10 +27,6 @@ var _shielding : bool = true
 
 const _explosion = preload("res://src/Explosion.tscn")
 const _end = preload("res://src/End.tscn")
-
-func _draw():
-	if _shielding:
-		draw_circle(_gunpoint.position, 20, Color(0, 1, 0, 0.5))
 
 func _process(delta):
 	if not _dead:
@@ -78,7 +75,7 @@ func damage():
 	else:
 		_shield_down.play()
 		_shielding = false
-		update()
+		_shield.visible = false
 		$ShieldTimer.start(4)
 	if PlayerStats.health <= 0:
 		if not _dead:
@@ -95,4 +92,4 @@ func damage():
 func _on_ShieldTimer_timeout():
 	_shield_up.play()
 	_shielding = true
-	update()
+	_shield.visible = true
