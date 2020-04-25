@@ -76,4 +76,4 @@ func damage():
 			_collision.disabled = true
 			_dead = true
 			yield(get_tree().create_timer(2), "timeout")
-			get_tree().change_scene_to(_end)
+			var _error = get_tree().change_scene_to(_end)
