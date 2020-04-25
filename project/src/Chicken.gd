@@ -17,6 +17,7 @@ func _process(delta:float):
 func _on_Chicken_body_entered(body):
 	if body is Rocket:
 		$CluckSound.play()
+		PlayerStats.score += 1
 		hide()
 
 
