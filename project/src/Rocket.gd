@@ -16,6 +16,7 @@ onready var _collision : CollisionShape2D = $CollisionShape2D
 onready var _gunpoint : Node2D = $GunPoint
 onready var _shoot_sound : AudioStreamPlayer2D = $ShootSound
 onready var _thrust_sound = $ThrustSound
+onready var _damage_sound = $DamageSound
 
 var _speed : float = 0
 var _dead : bool = false
@@ -58,6 +59,7 @@ func _process(delta):
 
 func damage():
 	PlayerStats.health -= 1
+	_damage_sound.play()
 	if PlayerStats.health <= 0:
 		if not _dead:
 			var _explode = _explosion.instance()

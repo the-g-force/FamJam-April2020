@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Rocket.gd" type="Script" id=1]
 [ext_resource path="res://assets/sfx/good_engine.wav" type="AudioStream" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/fires/001.png" type="Texture" id=6]
 [ext_resource path="res://assets/fires/002.png" type="Texture" id=7]
 [ext_resource path="res://assets/fires/003.png" type="Texture" id=8]
+[ext_resource path="res://assets/sfx/hit.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 19.989, 75.7177 )
@@ -36,7 +37,7 @@ texture = ExtResource( 3 )
 position = Vector2( 0, 377.58 )
 frames = SubResource( 2 )
 animation = "Flames"
-frame = 3
+frame = 1
 playing = true
 
 [node name="ThrustSound" type="AudioStreamPlayer" parent="."]
@@ -48,3 +49,6 @@ position = Vector2( -2.31644, -77.8327 )
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="DamageSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
