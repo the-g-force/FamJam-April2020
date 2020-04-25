@@ -27,6 +27,8 @@ current = true
 "LevelBounds",
 ]]
 position = Vector2( 2500, 0 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Top"]
 shape = SubResource( 1 )
@@ -36,6 +38,8 @@ shape = SubResource( 1 )
 ]]
 position = Vector2( 5000, 2500 )
 rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Right"]
 shape = SubResource( 1 )
@@ -45,6 +49,8 @@ shape = SubResource( 1 )
 ]]
 position = Vector2( 0, 2500 )
 rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Left"]
 shape = SubResource( 1 )
@@ -53,6 +59,8 @@ shape = SubResource( 1 )
 "LevelBounds",
 ]]
 position = Vector2( 2500, 5000 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBounds/Bottom"]
 shape = SubResource( 1 )

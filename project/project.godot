@@ -50,6 +50,7 @@ Fire={
 [layer_names]
 
 2d_physics/layer_1="Rocket"
+2d_physics/layer_2="Obstacles"
 
 [rendering]
 
