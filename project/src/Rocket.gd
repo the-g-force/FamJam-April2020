@@ -15,7 +15,7 @@ export var max_speed : float = 150
 
 var _speed : float = 0
 
-
+onready var flames : Node2D = $Hull/Flames
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,3 +41,6 @@ func _process(delta):
 	# Move the rocket
 	var velocity : Vector2 = Vector2(0, -_speed).rotated(deg2rad(rotation_degrees)) * delta
 	move_and_collide(velocity)
+
+	# Update the flame visibility
+	flames.visible = Input.get_action_strength("Thrust") > 0
