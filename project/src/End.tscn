@@ -1,10 +1,49 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://src/End.gd" type="Script" id=2]
+[ext_resource path="res://assets/explosion/003.png" type="Texture" id=3]
+[ext_resource path="res://assets/chicken.png" type="Texture" id=4]
+[ext_resource path="res://assets/bullet-green.png" type="Texture" id=5]
+[ext_resource path="res://assets/rocket.png" type="Texture" id=6]
 
 [node name="End" type="Node"]
 script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1036.0
+margin_bottom = 611.0
+color = Color( 0.819608, 0.823529, 0.803922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rocket" type="Sprite" parent="ColorRect"]
+position = Vector2( 237.986, 391.43 )
+rotation = 1.00183
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="chicken" type="Sprite" parent="ColorRect"]
+position = Vector2( 369.959, 81.0538 )
+rotation = 1.00183
+texture = ExtResource( 4 )
+
+[node name="chicken2" type="Sprite" parent="ColorRect"]
+position = Vector2( 800.457, 470.894 )
+rotation = 2.74225
+texture = ExtResource( 4 )
+
+[node name="Explosion" type="Sprite" parent="ColorRect"]
+position = Vector2( 839.172, 146.568 )
+rotation = -0.210553
+texture = ExtResource( 3 )
+
+[node name="bullet-green" type="Sprite" parent="ColorRect"]
+position = Vector2( 583.145, 230.874 )
+rotation = -0.378595
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
@@ -42,6 +81,7 @@ margin_top = -12.0
 margin_right = 25.0
 margin_bottom = 12.0
 custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Score"
 __meta__ = {
 "_edit_use_anchors_": false
