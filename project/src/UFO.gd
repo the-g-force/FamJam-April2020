@@ -10,20 +10,22 @@ var _can_shoot : bool = true
 
 const _EnemyBullet = preload("res://src/EnemyBullet.tscn")
 const _Explosion = preload("res://src/Explosion.tscn")
+const _Chicken = preload("res://src/Chicken.tscn")
 
 func _on_body_entered(body):
 	if body.is_in_group("Bullet"):
 		if _dead == false:
-			_spawn_explosion()
+			_spawn(_Chicken)
+			_spawn(_Explosion)
 			_dead = true
 			body.queue_free()
 			queue_free()
 			
 
-func _spawn_explosion() -> void:
-	var explosion = _Explosion.instance()
-	explosion.position = position
-	get_parent().add_child(explosion)
+func _spawn(scene : PackedScene) -> void:
+	var node = scene.instance()
+	node.position = position
+	get_parent().call_deferred('add_child', node)
 
 
 func _process(_delta:float):
