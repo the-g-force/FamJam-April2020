@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/CreditsMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/rocket.png" type="Texture" id=3]
+[ext_resource path="res://assets/CFIRobotRegular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/SpaceMono-Bold.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_color = Color( 0.176471, 0.176471, 0.176471, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 27
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="CreditsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1156.0
+margin_bottom = 662.0
+color = Color( 0.819608, 0.823529, 0.803922, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = 244.0
+margin_right = -79.0
+margin_bottom = 300.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rocket" type="Sprite" parent="."]
+position = Vector2( 158.712, 332.476 )
+scale = Vector2( 0.654977, 0.654977 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -176.0
+margin_top = 24.0
+margin_right = 525.0
+margin_bottom = 183.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.176471, 0.176471, 0.176471, 1 )
+custom_colors/font_color_shadow = Color( 0.00392157, 0.00784314, 0, 1 )
+text = "Credits"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Names" type="Label" parent="."]
+margin_left = 336.0
+margin_top = 184.0
+margin_right = 914.0
+margin_bottom = 504.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Creative Director: Peter Gestwicki
+
+Paul Gestwicki
+Jessica Gestwicki
+Alex Gestwicki
+Leo Gestwicki
+Daniel Gestwicki"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
