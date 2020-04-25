@@ -24,6 +24,10 @@ config/name="FamJam-April2020"
 run/main_scene="res://src/Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://src/PlayerStats.gd"
+
 [input]
 
 TurnLeft={

@@ -17,7 +17,6 @@ export var Bullet = preload("res://src/Bullet.tscn")
 export var bullet_speed : float = 400
 
 var _speed : float = 0
-var health = 10
 
 onready var _flames : Node2D = $Hull/Flames
 onready var _gunpoint : Node2D = $GunPoint
@@ -58,6 +57,6 @@ func _process(delta):
 		_shoot_sound.play()
 
 func damage():
-	health -= 1
-	if health <= 0:
-		hide()
+	PlayerStats.health -= 1
+	if PlayerStats.health <= 0:
+		print("Died")

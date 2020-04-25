@@ -78,4 +78,3 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="TestPath" instance=ExtResource( 4 )]
 position = Vector2( 315.174, 190.191 )
-speed = null
