@@ -9,7 +9,6 @@ func _ready():
 
 
 func _on_AnimatedSprite_animation_finished():
-	print('finished')
 	# Wait a moment before killing this explosion.
 	yield(get_tree().create_timer(pause_before_removal), "timeout")
 	queue_free()
