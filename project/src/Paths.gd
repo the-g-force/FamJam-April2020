@@ -14,6 +14,7 @@ func _on_Timer_timeout():
 	var path = paths.get_children()[randi () % paths.get_child_count()]
 	path.add_child(path_follow)
 
+
 func _process(delta:float):
 	for p in $Paths.get_children():
 		var path = p as Path2D

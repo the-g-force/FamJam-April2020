@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Rocket
 
 
 # Declare member variables here. Examples:
@@ -54,3 +55,6 @@ func _process(delta):
 		bullet.position = $GunPoint.get_global_transform().get_origin()
 		get_parent().add_child(bullet)
 		_shoot_sound.play()
+
+func damage():
+	print("Ouch")
