@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/End.gd" type="Script" id=2]
+
+[node name="End" type="Node"]
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -52.0
+margin_top = -100.0
+margin_right = 52.0
+margin_bottom = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="HBoxContainer"]
+margin_right = 82.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "Restart"
+
+[node name="Main" type="Button" parent="HBoxContainer"]
+margin_left = 86.0
+margin_right = 138.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "Main"
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 1 )
+text = "Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Main" to="." method="_on_Main_pressed"]

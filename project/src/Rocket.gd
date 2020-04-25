@@ -22,6 +22,7 @@ var _speed : float = 0
 var _dead : bool = false
 
 const _explosion = preload("res://src/Explosion.tscn")
+const _end = preload("res://src/End.tscn")
 
 func _process(delta):
 	if not _dead:
@@ -56,6 +57,12 @@ func _process(delta):
 			bullet.position = $GunPoint.get_global_transform().get_origin()
 			get_parent().add_child(bullet)
 			_shoot_sound.play()
+		
+		# DIE
+		if Input.is_action_just_pressed("die"):
+			PlayerStats.health = 0
+			damage()
+			
 
 func damage():
 	PlayerStats.health -= 1
@@ -68,3 +75,5 @@ func damage():
 			hide()
 			_collision.disabled = true
 			_dead = true
+			yield(get_tree().create_timer(2), "timeout")
+			get_tree().change_scene_to(_end)
