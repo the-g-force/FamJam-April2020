@@ -1,9 +1,11 @@
 extends Area2D
 
 export var speed : float = 100
-export var shoot_delay : float = 1
+export var shoot_delay : float = 1.5
 export var bullet_speed : float = 200
-export var shoot_variance : float = 0.2
+export var shoot_variance : float = 0.3
+# Accurance range in Radians
+export var accuracy_variance : float = 0.5
 
 var _dead = false
 var _target : Node2D
@@ -32,8 +34,13 @@ func _spawn(scene : PackedScene) -> void:
 func _process(_delta:float):
 	if _target and _can_shoot and not _dead:
 		var bullet = _EnemyBullet.instance()
-		bullet.position = get_global_transform().origin
+
+		# Determine the trajectory of the bullet
 		var trajectory : Vector2 = _target.get_global_transform().get_origin() - get_global_transform().origin
+		trajectory = trajectory.rotated(rand_range(-accuracy_variance, accuracy_variance))
+		
+		# Confugure the bullet and add it to the screen
+		bullet.position = get_global_transform().origin
 		bullet.forward_vector = trajectory.normalized()
 		get_tree().get_root().add_child(bullet)
 		$ShootSound.play()
