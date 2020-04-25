@@ -3,6 +3,7 @@ extends Area2D
 export var speed : float = 100
 export var shoot_delay : float = 1
 export var bullet_speed : float = 200
+export var shoot_variance : float = 0.2
 
 var _dead = false
 var _target : Node2D
@@ -37,7 +38,7 @@ func _process(_delta:float):
 		get_tree().get_root().add_child(bullet)
 		$ShootSound.play()
 		_can_shoot = false
-		$ShootingCooldown.start(shoot_delay)
+		$ShootingCooldown.start(shoot_delay + rand_range(-shoot_variance, shoot_variance))
 
 
 func _on_DetectionArea_body_entered(body):
