@@ -32,5 +32,6 @@ stream = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_body_exited"]

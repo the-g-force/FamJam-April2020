@@ -9,9 +9,3 @@ func _process(delta: float):
 		if collider.is_in_group("LevelBounds"):
 			queue_free()
 	
-
-
-func _draw():
-	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.yellow)
-
-

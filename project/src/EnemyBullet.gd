@@ -11,6 +11,3 @@ func _process(delta: float):
 		elif collider is Rocket:
 			(collider as Rocket).damage()
 			queue_free()
-
-func _draw():
-	draw_circle(Vector2.ZERO, $CollisionShape2D.shape.radius, Color.pink)
