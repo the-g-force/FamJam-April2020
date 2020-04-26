@@ -4,6 +4,8 @@
 
 The Web version requires a keyboard. Native builds also support gamepad controls.
 
+[Gameplay Video](https://youtu.be/VjyKXN6fA7w)
+
 ## How to Play
 
 - Use the left and right arrow keys or A/D to turn
@@ -24,6 +26,8 @@ The game was created with [Godot Engine](godotengine.org) v3.2.1. Other tools we
 [Inkscape](https://inkscape.org/), 
 and 
 [git](https://git-scm.com/).
+
+Read more about the game [on my blog](http://paulgestwicki.blogspot.com/2020/04/fam-jam-2-rocket-and-ufo-game.html).
 
 ## Third-Party Assets
 
