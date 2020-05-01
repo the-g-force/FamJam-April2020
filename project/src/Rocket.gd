@@ -10,6 +10,7 @@ export var min_speed : float = 20
 export var max_speed : float = 150
 export var Bullet = preload("res://src/Bullet.tscn")
 export var bullet_speed : float = 400
+export var shield_recharge_time : float = 4
 
 onready var _flames : Node2D = $Hull/Flames
 onready var _shield_up : AudioStreamPlayer = $ShieldUp
@@ -76,7 +77,7 @@ func damage():
 		_shield_down.play()
 		_shielding = false
 		_shield.visible = false
-		$ShieldTimer.start(4)
+		$ShieldTimer.start(shield_recharge_time)
 	if PlayerStats.health <= 0:
 		if not _dead:
 			var _explode = _explosion.instance()
