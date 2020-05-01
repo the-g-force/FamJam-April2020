@@ -11,7 +11,6 @@ const _SONG_MAP = {
 	Song.GAME: preload("res://assets/music/mainloop.ogg")
 }
 
-onready var pressed : AudioStreamPlayer = $ButtonPressed
 onready var _music = $Music
 
 var _song = Song.NONE
