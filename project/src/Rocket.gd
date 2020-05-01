@@ -29,7 +29,7 @@ var _shielding : bool = true
 const _explosion = preload("res://src/Explosion.tscn")
 const _end = preload("res://src/End.tscn")
 
-func _process(delta):
+func _process(delta : float):
 	if not _dead:
 		# Turn according to the rotation inputs
 		rotation_degrees += \
