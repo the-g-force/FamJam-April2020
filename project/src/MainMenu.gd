@@ -9,11 +9,9 @@ func _ready():
 	Jukebox.play_menu_music()
 	
 
-func _on_StartButton_pressed():
-	Jukebox.pressed.play()
-	var _error = get_tree().change_scene_to(_Level)
-
-
-func _on_CreditsButton_pressed():
-	Jukebox.pressed.play()
+func _on_CreditsButton_audio_feedback_complete():
 	var _error = get_tree().change_scene_to(_Credits) # Replace with function body.
+
+
+func _on_StartButton_audio_feedback_complete():
+	var _error = get_tree().change_scene_to(_Level)
