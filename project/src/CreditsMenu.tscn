@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/CreditsMenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/AudibleButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/rocket.png" type="Texture" id=3]
 [ext_resource path="res://assets/CFIRobotRegular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/SpaceMono-Bold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/sfx/click.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -29,21 +28,6 @@ __meta__ = {
 margin_right = 1156.0
 margin_bottom = 662.0
 color = Color( 0.819608, 0.823529, 0.803922, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackButton" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -176.0
-margin_top = 216.0
-margin_right = -79.0
-margin_bottom = 272.0
-custom_fonts/font = ExtResource( 2 )
-text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,7 +76,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonClickSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
-[connection signal="finished" from="ButtonClickSound" to="." method="_on_ButtonClickSound_finished"]
+[node name="BackButton" parent="." instance=ExtResource( 2 )]
+margin_left = 336.0
+margin_top = 516.0
+margin_right = 446.0
+margin_bottom = 580.0
+text = "Back"
+[connection signal="audio_feedback_complete" from="BackButton" to="." method="_on_BackButton_audio_feedback_complete"]

@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Button",
+"class": "AudibleButton",
+"language": "GDScript",
+"path": "res://src/AudibleButton.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Rocket",
 "language": "GDScript",
 "path": "res://src/Rocket.gd"
 } ]
 _global_script_class_icons={
+"AudibleButton": "",
 "Rocket": ""
 }
 
